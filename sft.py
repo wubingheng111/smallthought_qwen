@@ -78,7 +78,7 @@ def main(script_args, training_args, model_args):
     # Load datasets
     ###############
     if re.match(r'^[^/]+/[^/]+$', script_args.dataset_name):
-        dataset = load_dataset(script_args.dataset_name, name=script_args.dataset_config, split="train")
+        dataset = load_dataset(script_args.dataset_name, name=script_args.dataset_config)
     else:
         dataset = load_from_disk(script_args.dataset_name)
     if "test" not in dataset:
